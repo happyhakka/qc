@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/coreos/bbolt v1.3.3 // indirect
-	github.com/coreos/etcd v3.3.18+incompatible // indirect
+	github.com/coreos/etcd v3.3.18+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/groupcache v0.0.0-20191227052852-215e87163ea7 // indirect
@@ -16,6 +16,7 @@ require (
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/prometheus/client_golang v1.3.0 // indirect
+	github.com/spf13/cobra v0.0.5 // indirect
 	github.com/spf13/viper v1.6.1
 	github.com/uber/jaeger-client-go v2.21.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect

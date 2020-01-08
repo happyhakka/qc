@@ -8,10 +8,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/coreos/etcd/mvcc/mvccpb"
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/pkg/transport"
-
-	"go.etcd.io/etcd/mvcc/mvccpb"
 	"google.golang.org/grpc/naming"
 )
 
