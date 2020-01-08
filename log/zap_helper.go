@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"qc/util"
+	"github.com/happyhakka/qc/util"
 
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
