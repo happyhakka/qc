@@ -6,9 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/happyhakka/qc/util"
-
 	"github.com/natefinch/lumberjack"
+	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -136,9 +135,15 @@ func InitLog(logConfigFile string) (*zap.Logger, error) {
 	}
 
 	opt := &LoggerOption{}
-	jsonParser := util.NewJsonParser()
-	err := jsonParser.Load(logConfigFile, opt)
-	if err != nil {
+	lg := viper.New()
+	lg.SetConfigFile(logConfigFile)
+	lg.SetConfigType("json")
+	if err := lg.ReadInConfig(); err != nil {
+		fmt.Println("read log.json file fail!", err)
+		return nil, err
+	}
+	if err := lg.Unmarshal(opt); err != nil {
+		fmt.Println("log.json unmarshal fail!", err)
 		return nil, err
 	}
 
