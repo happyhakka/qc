@@ -7,8 +7,8 @@ import (
 const (
 	MajorVersion  = "1"
 	MinorVersion  = "0"
-	ReviseVersion = "4"
-	BuildVersion  = "0108"
+	ReviseVersion = "5"
+	BuildVersion  = "0117"
 )
 
 var (

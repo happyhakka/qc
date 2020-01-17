@@ -12,9 +12,9 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-
 const (
-	EV_LOG_FILE="ev_log_file"
+	EV_LOG_FILE          = "ev_log_file"
+	EV_LOG_FILE_WITH_PID = "ev_log_file_with_pid"
 )
 
 var (
@@ -152,9 +152,13 @@ func InitLog(logConfigFile string) (*zap.Logger, error) {
 		return nil, err
 	}
 
-	lfn :=  os.Getenv(EV_LOG_FILE)
-	if len(lfn) > 0  {
+	lfn := os.Getenv(EV_LOG_FILE)
+	if len(lfn) > 0 {
 		opt.FilePath = lfn
+	}
+
+	if len(os.Getenv(EV_LOG_FILE_WITH_PID)) > 0 {
+		opt.FilePath = strings.Replace(opt.FilePath, ".log", fmt.Sprintf("-%d-%d.log", os.Getpid(), os.Getppid()), -1)
 	}
 
 	Logger = NewLogger(opt)
