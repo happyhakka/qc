@@ -12,6 +12,11 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+
+const (
+	EV_LOG_FILE="ev_log_file"
+)
+
 var (
 	Logger      *zap.Logger
 	Log         *zap.SugaredLogger
@@ -145,6 +150,11 @@ func InitLog(logConfigFile string) (*zap.Logger, error) {
 	if err := lg.Unmarshal(opt); err != nil {
 		fmt.Println("log.json unmarshal fail!", err)
 		return nil, err
+	}
+
+	lfn :=  os.Getenv(EV_LOG_FILE)
+	if len(lfn) > 0  {
+		opt.FilePath = lfn
 	}
 
 	Logger = NewLogger(opt)

@@ -7,7 +7,7 @@ import (
 const (
 	MajorVersion  = "1"
 	MinorVersion  = "0"
-	ReviseVersion = "2"
+	ReviseVersion = "4"
 	BuildVersion  = "0108"
 )
 

@@ -16,7 +16,6 @@ require (
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/prometheus/client_golang v1.3.0 // indirect
-	github.com/spf13/cobra v0.0.5 // indirect
 	github.com/spf13/viper v1.6.1
 	github.com/uber/jaeger-client-go v2.21.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
