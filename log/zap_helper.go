@@ -162,7 +162,7 @@ func InitLog(logConfigFile string) (*zap.Logger, error) {
 	}
 
 	Logger = NewLogger(opt)
-	Logger.Info("log init ok.", zap.String("LogLevel", opt.Level))
+	Logger.Info("log init ok.", zap.String("LogLevel", opt.Level), zap.String("FilePath", opt.FilePath))
 	Log := Logger.Sugar()
 	Log.Infof("log init ok level:%v", opt.Level)
 
